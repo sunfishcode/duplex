@@ -43,7 +43,7 @@ The following are some notable types for which `Duplex` is implemented:
 | Type                             | `cfg`                     | Notes |
 | -------------------------------- | ------------------------- | ----- |
 | [`std::net::TcpStream`]          |                           |       |
-| [`io_streams::StreamInteractor`] |                           |       |
+| [`io_streams::StreamDuplexer`]   |                           |       |
 | [`nameless::DuplexByteStream`]   |                           |       |
 | [`nameless::DuplexTextStream`]   |                           |       |
 | [`char_device::CharDevice`]      | `feature = char-device`   |       |
@@ -68,7 +68,7 @@ The following are some notable types for which `Duplex` is implemented:
 [`readwrite::ReadWrite`]: https://docs.rs/readwrite/latest/readwrite/struct.ReadWrite.html
 [`duplexify::Duplexify`]: https://docs.rs/duplexify/latest/duplexify/struct.Duplexify.html
 [`socketpair::SocketpairStream`]: https://docs.rs/socketpair/latest/socketpair/struct.SocketpairStream.html
-[`io_streams::StreamInteractor`]: https://docs.rs/io-streams/latest/io_streams/struct.StreamInteractor.html
+[`io_streams::StreamDuplexer`]: https://docs.rs/io-streams/latest/io_streams/struct.StreamDuplexer.html
 [`nameless::DuplexByteStream`]: https://docs.rs/nameless/latest/nameless/struct.DuplexByteStream.html
 [`nameless::DuplexTextStream`]: https://docs.rs/nameless/latest/nameless/struct.DuplexTextStream.html
 [`AsyncRead`]: https://docs.rs/futures-io/latest/futures_io/trait.AsyncRead.html
