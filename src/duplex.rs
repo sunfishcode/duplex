@@ -82,6 +82,9 @@ impl Duplex for SocketpairStream {}
 #[cfg(feature = "ssh2")]
 impl Duplex for ssh2::Stream {}
 
+#[cfg(feature = "ssh2")]
+impl Duplex for ssh2::Channel {}
+
 #[cfg(all(unix, feature = "serialport"))]
 impl Duplex for serialport::TTYPort {}
 

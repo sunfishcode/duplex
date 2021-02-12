@@ -49,6 +49,7 @@ The following are some notable types for which `Duplex` is implemented:
 | [`char_device::CharDevice`]      | `feature = char-device`   |       |
 | [`socketpair::SocketpairStream`] | `feature = socketpair`    |       |
 | [`ssh2::Stream`]         | `feature = ssh2`                  |       |
+| [`ssh2::Channel`]        | `feature = ssh2`                  |       |
 | [`serialport::TTYPort`]  | `all(unix, feature = serialport)` | [serialport dependencies] |
 | [`readwrite::ReadWrite`] | `feature = readwrite`             |       |
 | [`duplexify::Duplexify`] | `feature = duplexify`             |       |
@@ -64,6 +65,7 @@ The following are some notable types for which `Duplex` is implemented:
 [`CharDevice`]: https://docs.rs/char-device/latest/char_device/struct.CharDevice.html
 [`char_device::CharDevice`]: https://docs.rs/char_device/latest/char_device/struct.CharDevice.html
 [`ssh2::Stream`]: https://docs.rs/ssh2/latest/ssh2/struct.Stream.html
+[`ssh2::Channel`]: https://docs.rs/ssh2/latest/ssh2/struct.Channel.html
 [`serialport::TTYPort`]: https://docs.rs/serialport/latest/serialport/struct.TTYPort.html
 [`readwrite::ReadWrite`]: https://docs.rs/readwrite/latest/readwrite/struct.ReadWrite.html
 [`duplexify::Duplexify`]: https://docs.rs/duplexify/latest/duplexify/struct.Duplexify.html
