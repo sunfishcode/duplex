@@ -35,8 +35,8 @@ jobs:
 
     steps:
     - run: |
-        sudo apt update
-        sudo apt install libudev-dev
+        sudo apt-get update
+        sudo apt-get install libudev-dev
       if: matrix.os == 'ubuntu-latest'
     - uses: actions/checkout@v2
       with:
