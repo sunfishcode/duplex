@@ -1,9 +1,13 @@
 #![allow(clippy::module_name_repetitions)]
 
+#[cfg(all(feature = "char-device", feature = "futures-io"))]
+use char_device::AsyncCharDevice;
 #[cfg(feature = "char-device")]
 use char_device::CharDevice;
 #[cfg(feature = "futures-io")]
 use futures_io::{AsyncRead, AsyncWrite};
+#[cfg(all(feature = "socketpair", features = "futures-io"))]
+use socketpair::AsyncSocketpairStream;
 #[cfg(feature = "socketpair")]
 use socketpair::SocketpairStream;
 use std::{
@@ -76,8 +80,14 @@ impl Duplex for std::os::unix::net::UnixStream {}
 #[cfg(feature = "char-device")]
 impl Duplex for CharDevice {}
 
+#[cfg(all(feature = "char-device", feature = "futures-io"))]
+impl Duplex for AsyncCharDevice {}
+
 #[cfg(feature = "socketpair")]
 impl Duplex for SocketpairStream {}
+
+#[cfg(all(feature = "socketpair", features = "futures-io"))]
+impl Duplex for AsyncSocketpairStream {}
 
 #[cfg(feature = "ssh2")]
 impl Duplex for ssh2::Stream {}
