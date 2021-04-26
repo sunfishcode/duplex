@@ -53,6 +53,7 @@ The following are some notable types for which `Duplex` is implemented:
 | [`serialport::TTYPort`]  | `all(unix, feature = serialport)` | [serialport dependencies] |
 | [`readwrite::ReadWrite`] | `feature = readwrite`             |       |
 | [`duplexify::Duplexify`] | `feature = duplexify`             |       |
+| [`socket2::Socket`]      | `feature = socket2`               |       |
 
 [serialport dependencies]: https://gitlab.com/susurrus/serialport-rs#dependencies
 [`Read`]: https://doc.rust-lang.org/std/io/trait.Read.html
@@ -81,3 +82,4 @@ The following are some notable types for which `Duplex` is implemented:
 [`HalfDuplex`]: https://docs.rs/duplex/latest/duplex/trait.HalfDuplex.html
 [`FullDuplex`]: https://docs.rs/duplex/latest/duplex/trait.FullDuplex.html
 [`TokioFullDuplex`]: https://docs.rs/duplex/latest/duplex/trait.TokioFullDuplex.html
+[`Socket`]: https://docs.rs/socket2/latest/socket2/struct.Socket.html

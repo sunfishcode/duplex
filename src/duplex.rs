@@ -74,6 +74,9 @@ impl<T: Duplex + tokio::io::AsyncRead + tokio::io::AsyncWrite> TokioFullDuplex f
 
 impl Duplex for TcpStream {}
 
+#[cfg(feature = "socket2")]
+impl Duplex for socket2::Socket {}
+
 #[cfg(unix)]
 impl Duplex for std::os::unix::net::UnixStream {}
 
