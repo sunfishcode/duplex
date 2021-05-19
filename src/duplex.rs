@@ -1,15 +1,19 @@
 #![allow(clippy::module_name_repetitions)]
 
 #[cfg(all(feature = "char-device", feature = "futures-io"))]
-use char_device::AsyncCharDevice;
+use char_device::AsyncStdCharDevice;
 #[cfg(feature = "char-device")]
 use char_device::CharDevice;
+#[cfg(all(feature = "char-device", feature = "tokio"))]
+use char_device::TokioCharDevice;
 #[cfg(feature = "futures-io")]
 use futures_io::{AsyncRead, AsyncWrite};
 #[cfg(all(feature = "socketpair", features = "futures-io"))]
-use socketpair::AsyncSocketpairStream;
+use socketpair::AsyncStdSocketpairStream;
 #[cfg(feature = "socketpair")]
 use socketpair::SocketpairStream;
+#[cfg(all(feature = "socketpair", features = "tokio"))]
+use socketpair::TokioSocketpairStream;
 use std::{
     io::{Read, Write},
     net::TcpStream,
@@ -84,13 +88,19 @@ impl Duplex for std::os::unix::net::UnixStream {}
 impl Duplex for CharDevice {}
 
 #[cfg(all(feature = "char-device", feature = "futures-io"))]
-impl Duplex for AsyncCharDevice {}
+impl Duplex for AsyncStdCharDevice {}
+
+#[cfg(all(feature = "char-device", feature = "tokio"))]
+impl Duplex for TokioCharDevice {}
 
 #[cfg(feature = "socketpair")]
 impl Duplex for SocketpairStream {}
 
 #[cfg(all(feature = "socketpair", features = "futures-io"))]
-impl Duplex for AsyncSocketpairStream {}
+impl Duplex for AsyncStdSocketpairStream {}
+
+#[cfg(all(feature = "socketpair", features = "tokio"))]
+impl Duplex for TokioSocketpairStream {}
 
 #[cfg(feature = "ssh2")]
 impl Duplex for ssh2::Stream {}
