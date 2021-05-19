@@ -82,4 +82,4 @@ The following are some notable types for which `Duplex` is implemented:
 [`HalfDuplex`]: https://docs.rs/duplex/latest/duplex/trait.HalfDuplex.html
 [`FullDuplex`]: https://docs.rs/duplex/latest/duplex/trait.FullDuplex.html
 [`TokioFullDuplex`]: https://docs.rs/duplex/latest/duplex/trait.TokioFullDuplex.html
-[`Socket`]: https://docs.rs/socket2/latest/socket2/struct.Socket.html
+[`socket2::Socket`]: https://docs.rs/socket2/latest/socket2/struct.Socket.html
