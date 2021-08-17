@@ -14,10 +14,8 @@ use socketpair::AsyncStdSocketpairStream;
 use socketpair::SocketpairStream;
 #[cfg(all(feature = "socketpair", features = "tokio"))]
 use socketpair::TokioSocketpairStream;
-use std::{
-    io::{Read, Write},
-    net::TcpStream,
-};
+use std::io::{Read, Write};
+use std::net::TcpStream;
 
 /// A trait which indicates a type represents a duplex communication channel,
 /// meaning it's bidirectional and may be used in an interactive manner.
