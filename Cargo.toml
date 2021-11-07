@@ -29,5 +29,5 @@ use_async_std_socketpair = ["futures-io", "socketpair/use_async_std"]
 use_tokio_char_device = ["char-device/use_tokio"]
 use_tokio_socketpair = ["socketpair/use_tokio"]
 
-[badges]
-maintenance = { status = "actively-developed" }
+[package.metadata.docs.rs]
+all-features = true
