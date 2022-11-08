@@ -55,6 +55,10 @@ The following are some notable types for which `Duplex` is implemented:
 | [`duplexify::Duplexify`] | `feature = duplexify`             |       |
 | [`socket2::Socket`]      | `feature = socket2`               |       |
 
+Support for async-std and tokio in char-device and socketpair is temporarily
+disabled until those crates contain the needed implementations of the
+I/O safety traits.
+
 [serialport dependencies]: https://gitlab.com/susurrus/serialport-rs#dependencies
 [`Read`]: https://doc.rust-lang.org/std/io/trait.Read.html
 [`Write`]: https://doc.rust-lang.org/std/io/trait.Write.html
