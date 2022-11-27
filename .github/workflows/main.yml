@@ -11,7 +11,7 @@ jobs:
     name: Rustfmt
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: true
     - uses: ./.github/actions/install-rust
@@ -38,7 +38,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install libudev-dev
       if: matrix.os == 'ubuntu-latest'
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: true
     - uses: ./.github/actions/install-rust
