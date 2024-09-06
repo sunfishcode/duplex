@@ -12,12 +12,12 @@ use char_device::TokioCharDevice;
 */
 #[cfg(feature = "futures-io")]
 use futures_io::{AsyncRead, AsyncWrite};
-#[cfg(all(feature = "socketpair", features = "futures-io"))]
+#[cfg(all(feature = "socketpair", feature = "futures-io"))]
 use socketpair::AsyncStdSocketpairStream;
 #[cfg(feature = "socketpair")]
 use socketpair::SocketpairStream;
 /*
-#[cfg(all(feature = "socketpair", features = "tokio"))]
+#[cfg(all(feature = "socketpair", feature = "tokio"))]
 use socketpair::TokioSocketpairStream;
 */
 use std::io::{Read, Write};
@@ -104,11 +104,11 @@ impl Duplex for TokioCharDevice {}
 #[cfg(feature = "socketpair")]
 impl Duplex for SocketpairStream {}
 
-#[cfg(all(feature = "socketpair", features = "futures-io"))]
+#[cfg(all(feature = "socketpair", feature = "futures-io"))]
 impl Duplex for AsyncStdSocketpairStream {}
 
 /*
-#[cfg(all(feature = "socketpair", features = "tokio"))]
+#[cfg(all(feature = "socketpair", feature = "tokio"))]
 impl Duplex for TokioSocketpairStream {}
 */
 
